@@ -45,35 +45,36 @@
 }
 
 :root[data-theme='dark'] {
-  --bg: #16181c;
-  --surface: #1e2126;
-  --surface-2: #252930;
-  --border: #2f343c;
-  --border-strong: #454b55;
-  --text: #e7e9ec;
-  --muted: #9aa1ab;
-  --faint: #8a919b;
-  --accent: #8fb0e8;
-  --accent-hover: #a5c0ee;
-  --on-accent: #10131a;
-  --accent-soft: rgba(143, 176, 232, 0.12);
+  --bg: #141522;
+  --surface: #1b1d2d;
+  --surface-2: #24273a;
+  --border: #353953;
+  --border-strong: #4b5072;
+  --text: #e8e9f5;
+  --muted: #a6a9c3;
+  --faint: #9194b0;
+  --accent: #aab7ff;
+  --accent-hover: #c0b9ff;
+  --on-accent: #121321;
+  --accent-soft: rgba(126, 139, 255, 0.16);
   --ok: #8cc9a4;
   --ok-soft: rgba(140, 201, 164, 0.12);
   --warn: #e0c07f;
   --warn-soft: rgba(224, 192, 127, 0.12);
   --bad: #e39a9a;
   --bad-soft: rgba(227, 154, 154, 0.12);
-  --lit: rgba(143, 176, 232, 0.14);
-  --link: #8ab4f8;
-  /* the same hues, stepped for the dark card */
+  --lit: rgba(112, 129, 255, 0.18);
+  --link: #b6c2ff;
+  /* Blue-violet accents; status colors retain their existing meaning. */
   --success: #3fb950;
   --success-soft: rgba(63, 185, 80, 0.12);
   --success-line: rgba(63, 185, 80, 0.4);
   --chart-bad: #d03b3b;
   --chart-warn: #c98500;
-  --chart-info: #3987e5;
-  --chart-muted: #898781;
+  --chart-info: #8296ff;
+  --chart-muted: #9b8de0;
   color-scheme: dark;
+  font-style: italic;
 }
 
 * {

@@ -116,7 +116,7 @@ direct REST calls.
 
 ## How AI is used
 
-- **Microsoft Agent Framework** runs two agents on **gpt-5.4-mini** in **Microsoft Foundry**.
+- **Microsoft Agent Framework** runs two agents on **Gemini 3.5 Flash-Lite** through the Gemini API.
   The Writer has two briefs: a reply to PayPal's reviewer, or a message to the buyer.
 - The **Writer** returns structured output (each sentence with the evidence ids it cites and
   the buyer claims it answers), so plain code can check every citation.
@@ -147,23 +147,22 @@ the tests and documented there: AG Grid's own layout wrappers inside its grid.
 ## Tech stack
 
 Python 3.11, FastAPI with server-sent events · PayPal Agent Toolkit · Microsoft Agent
-Framework, Microsoft Foundry (gpt-5.4-mini) · React, TypeScript, Vite · AG Grid, AG Charts,
+Framework, Gemini API (gemini-3.5-flash-lite) · React, TypeScript, Vite · AG Grid, AG Charts,
 react-day-picker, Inter · pytest, Playwright, axe-core, ruff, ESLint · GitHub Actions · Docker on
 Render. The grid and charts load only when first shown (first page load about 80 kB gzipped).
 
 ## Run it yourself
 
-You need a PayPal developer account (free sandbox app), an Azure AI Foundry model deployment,
-Python 3.11 and Node 20.
+You need a PayPal developer account (free sandbox app), a Gemini API key from
+[Google AI Studio](https://aistudio.google.com/apikey), Python 3.11 and Node 20.
 
 ```bash
-cp .env.example .env            # fill in the PayPal sandbox app and Foundry endpoint
+cp .env.example .env            # fill in PayPal sandbox credentials and GOOGLE_API_KEY
 python3.11 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt
 .venv/bin/pip install --no-deps -r requirements-toolkit.txt   # PayPal Agent Toolkit, without its
                                                                # LangChain/CrewAI extras we don't use
 npm --prefix web ci
 
-az login                         # local AI auth (the hosted app uses FOUNDRY_API_KEY)
 .venv/bin/uvicorn copilot.api:app --reload    # API on http://localhost:8000
 npm --prefix web run dev                       # UI on http://localhost:5173
 ```
